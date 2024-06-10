@@ -1,0 +1,443 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background: #f4f4f4;
+}
+/* Nav Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding-inline: 40px;
+  position: relative;
+  z-index: 1;
+  height: 110px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    letter-spacing: 3px;
+    color: #cecece;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.nav-links.showing {
+  transform: translateX(0);
+}
+/* Big Image */
+
+.bk-image {
+  position: relative;
+  width: 100%;
+  max-width: 1282px; /* Slightly reduced maximum width of the container */
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bk-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.bk-image img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.overlay-text {
+  color: #fff;
+  font-size: 4vw; /* Responsive font size */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding-left: 20px;
+}
+/*  */
+#title-head {
+  color: #131313;
+  font-weight: 600;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  padding-block: 70px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.image {
+  position: relative;
+  width: calc(23% - 10px); /* Adjusted for gap */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.image:hover .overlay {
+  opacity: 1;
+}
+
+.image .overlay-text {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fff;
+  padding-left: 6px;
+}
+/*  Grid container*/
+.grid {
+  padding: 70px 20px; /* Adjust inner padding as needed */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Set three columns per row */
+  grid-gap: 20px; /* Adjust the gap between the boxes as needed */
+}
+
+.box {
+  background-color: white; /* Background color for the boxes */
+  padding: 20px; /* Inner padding for the boxes */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px); /* Move the box slightly up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+.header h1 {
+  margin: 0; /* Remove margin for h1 */
+  font-size: 50px;
+  line-height: 50px;
+  padding-block: 16px;
+}
+.paragraph {
+  color: #787878;
+}
+.num {
+  color: #ee0000;
+}
+h2 {
+  font-weight: bold;
+  line-height: 30px;
+}
+/*  */
+.hero {
+  border-top: 13px solid white;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #ee0000;
+}
+
+.selfie-images {
+  display: flex;
+  flex-direction: row; /* Set flex direction to row */
+}
+
+.selfie-images img {
+  max-width: 100%; /* Ensure images don't exceed container width */
+}
+.text {
+  flex: 0 0 554px;
+  line-height: 40px;
+  padding-left: 106px;
+  color: white;
+}
+/*  */
+/* General styles for button container */
+.btn-container {
+  padding-block: 20px;
+  display: flex;
+  gap: 50px; /* Adjust spacing between buttons */
+}
+
+/* Styles for btn-1 */
+.btn-1 {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for btn-1 */
+.btn-1:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Styles for btn-2 */
+.btn-2 {
+  font-family: "Poppins", sans-serif;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for btn-2 */
+.btn-2:hover {
+  background-color: white;
+  color: black;
+}
+#why {
+  color: black;
+  font-size: 30px;
+}
+.middle {
+  text-align: center;
+  padding-block: 70px;
+}
+#our {
+  font-size: 16px;
+  color: #ee0000;
+}
+.flex-layout {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.content {
+  background-color: white; /* Background color for the boxes */
+  padding: 20px; /* Inner padding for the boxes */
+  border-radius: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.content:hover {
+  transform: translateY(-5px); /* Move the box slightly up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.grid-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer1-text {
+  padding: 30px;
+  background: #000;
+}
+.footer2-text {
+  background: #000;
+  width: max-content;
+}
+.footer1-text p {
+  font-weight: 100;
+  color: #b1b1b1;
+}
+.footer2-text p {
+  font-weight: 100;
+  color: #b1b1b1;
+}
+.footer-link {
+  list-style: none;
+  color: #b1b1b1;
+}
+
+.edit h4 {
+  color: #fff;
+}
+.footer-list {
+  line-height: 37px;
+}
+.footer-2 {
+  display: flex;
+  height: 70%;
+}
+.first {
+  width: max-content;
+  padding-inline: 43px;
+  padding-top: 100px;
+  border-left: 1px solid #787878;
+}
+.footer-1 {
+  border-bottom: 1px solid #787878;
+  padding-top: 30px;
+}
+.contact a {
+  text-decoration: none;
+  color: #3498db; /* Initial color */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+.contact a:hover {
+  color: #e74c3c; /* Color on hover */
+  text-decoration: underline;
+  text-decoration-color: #e74c3c; /* Underline color on hover */
+}
+.fa-solid {
+  padding-right: 10px;
+}
+
+.finally {
+  /* the position:absolute is breaking my code */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.finally a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.finally a:hover {
+  color: #ee0000;
+}
+#disclaimer-banner {
+  background-color: #ffcc00;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+body {
+  margin-top: 50px; /* Adjust depending on the height of your banner */
+}
+/* Media Query for Mobile */
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
